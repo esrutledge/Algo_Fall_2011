@@ -2,8 +2,6 @@
 
 #include "ofMain.h"
 
-const int NUMSQUARES = 1;
-
 class testApp : public ofBaseApp{
 
 	public:
@@ -21,10 +19,6 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 	
-	float squareWidth;
-	float velocity[NUMSQUARES];
-	ofPoint pos[NUMSQUARES];
+
 		
-	
-	
 };

@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-const int NUMSQUARES = 3;
+const int NUMSQUARES = 12;
 
 class testApp : public ofBaseApp{
 	
@@ -25,6 +25,8 @@ public:
 	
 	float keyFrameSquareWidths[2];
 	int whichWidth;
+	float opacityValues[NUMSQUARES]; 
+	int whichOpacity;
 	
 	float squareWidthStart;
 	float squareWidthEnd;
@@ -35,8 +37,10 @@ public:
 	
 	float pct[NUMSQUARES];
 	float shapedPct[NUMSQUARES];
-
+	float opacity[NUMSQUARES];
+	
 	float shaper;
+
 
 	
 	int whichSquare;

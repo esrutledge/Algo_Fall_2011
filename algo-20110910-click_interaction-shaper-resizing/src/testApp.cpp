@@ -3,20 +3,27 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 	
+
+	
 	ofSetVerticalSync(TRUE);
 	ofSetFrameRate(30);
+	ofEnableAlphaBlending();
+	
+	ofBackground(0);
 	
 	ofSetRectMode(OF_RECTMODE_CENTER);
 
-	
-	ofSetColor(255,120,0);
 	
 	whichSquare = 0;
 	
 	keyFrameSquareWidths[0] = 10;
 	keyFrameSquareWidths[1] = 100;
-	whichWidth = 0;
 
+
+	opacityValues[0] = 40;
+	opacityValues[1] = 255;
+
+	
 	squareWidthStart = keyFrameSquareWidths[0];
 	squareWidthEnd = keyFrameSquareWidths[1];
 	
@@ -29,12 +36,17 @@ void testApp::setup(){
 	
 	
 	for(int i = 0; i < NUMSQUARES; i++){
-		startPos[i].set(0,ofGetHeight()*i/NUMSQUARES);
-		endPos[i].set(0,ofGetHeight()*i/NUMSQUARES);
+		opacity[i] = opacityValues[0];
+		ofSetColor(255,120,0, opacity[i]);
+		startPos[i].set(ofGetWidth()/2,ofGetHeight()*(i+1)/(NUMSQUARES+1));
+		endPos[i].set(ofGetWidth()/2,ofGetHeight()*(i+1)/(NUMSQUARES+1));
 		pct[i] = 0;
 		squareWidth[i] = squareWidthStart;
 		growing[i] = true;
 	}
+	
+
+
 	
 		
 	cout << increment;
@@ -51,13 +63,18 @@ void testApp::draw(){
 	
 	
 	
-	for(int i = 0; i < NUMSQUARES; i++){		
+	for(int i = 0; i < NUMSQUARES; i++){	
+		
+
+
 		shapedPct[i] = powf(pct[i], shaper);
 		
 		pos[i] = (1-shapedPct[i])*pos[i] + shapedPct[i]*endPos[i];
 		
 		squareWidth[i] = (1-shapedPct[i])*keyFrameSquareWidths[growing[i]] + shapedPct[i]*keyFrameSquareWidths[!growing[i]];
-		
+		opacity[i] = (1-shapedPct[i])*opacityValues[growing[i]] + shapedPct[i]*opacityValues[!growing[i]];
+
+		ofSetColor(255, 120, 0, opacity[i]);
 		
 		ofRect(pos[i].x, pos[i].y, squareWidth[i], squareWidth[i]);
 

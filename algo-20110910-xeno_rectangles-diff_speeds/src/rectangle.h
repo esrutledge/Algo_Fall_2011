@@ -12,20 +12,27 @@
 
 #include "ofMain.h"
 
+
 class rectangle {
 	
 public:
 	
 	rectangle();
 	
-	void	draw();
+	void	draw(int whichColor);
 	void	xenoToPoint(float catchX, float catchY);
+	void	resize(float yPos);
 	
+	float rectWidth;
 	
 	ofPoint		pos;
 	float		catchUpSpeed;		// take this pct of where I want to be, and 1-catchUpSpeed of my pos
-	int rgbColor[3];
-	
+
+	int rValues[5];
+	int gValues[5];
+	int bValues[5];
+
+		
 };
 
 #endif // RECTANGLE_H

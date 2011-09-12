@@ -1,8 +1,10 @@
 #pragma once
 
 #include "ofMain.h"
+#include "rectangle.h"
 
-const int NUMSQUARES = 2;
+#define NUMSQUARES 400
+
 
 class testApp : public ofBaseApp{
 
@@ -21,12 +23,9 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 	
-	float squareWidth;
-	float velocity[NUMSQUARES];
-	ofPoint pos[NUMSQUARES];
+	rectangle rectangles[NUMSQUARES];
+	float pct;
+	
+	
 		
-	bool isMoving[NUMSQUARES];
-	
-	float mph[NUMSQUARES];
-	
 };

@@ -28,5 +28,6 @@ class testApp : public ofBaseApp{
 	bool isMoving[NUMSQUARES];
 	
 	float mph[NUMSQUARES];
+	float inpersec[NUMSQUARES];
 	
 };

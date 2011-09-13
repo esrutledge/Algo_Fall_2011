@@ -11,12 +11,15 @@ void testApp::setup(){
 	for(int i = 0; i < NUMSQUARES; i++){
 		pos[i].x = 50;
 		pos[i].y = 50+i*300;
-		velocity[i] = (i)*ofGetWidth()/18 + 0.02;
+		velocity[i] = (i)*ofGetWidth()/8 + 0.02;
 		isMoving[i] = true;
 		
 		//calculate mph from following calc (using screen resolution of 132 ppi): 132px/1in * 63360in/1mi = 8,363,520px/1mi; 1frame*frameRate/sec * 3600sec/1hr = 3600*frameRate/hr; 1mi/1hr = 8363520px/3600*frameRate frames; mph = velocity/(2,323.2/frameRate)
 		mph[i] = velocity[i]/(2323.2/ofGetFrameRate());
+		inpersec[i] = mph[i]*63360/60;
+		
 		cout << mph[i] << "mph\n";
+		cout << inpersec[i] << "in/second\n\n";
 	}
 		
 	squareWidth = 100;

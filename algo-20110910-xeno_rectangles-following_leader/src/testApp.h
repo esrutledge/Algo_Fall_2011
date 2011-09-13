@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "rectangle.h"
 
-#define NUMSQUARES 400
+#define NUMSQUARES 40
 
 
 class testApp : public ofBaseApp{

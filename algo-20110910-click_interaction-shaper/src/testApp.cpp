@@ -81,12 +81,8 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-//	startPos[whichSquare] = pos[whichSquare];
+
 	endPos[whichSquare].set(mouseX, mouseY);
-
-	growing[whichSquare] = !growing[whichSquare];
-
-	cout << growing[whichSquare];
 	
 	pct[whichSquare] = 0;
 

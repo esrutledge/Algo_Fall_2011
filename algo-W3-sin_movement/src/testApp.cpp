@@ -11,20 +11,17 @@ void testApp::setup(){
 	
 	ofSetColor(255, 120, 0);
 	
-	pos.x = ofGetWidth()/2;
-	pos.y = ofGetHeight()/2;
-		
-	squareWidth = 20;
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-	pos.x = sin(ofGetElapsedTimef())*((ofGetWidth()-squareWidth)/2) + ofGetWidth()/2;
+	myRect.update();
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	ofRect(pos.x, pos.y, squareWidth, squareWidth);
+//	ofRect(pos.x, pos.y, squareWidth, squareWidth);
+	myRect.draw();
 }
 
 //--------------------------------------------------------------

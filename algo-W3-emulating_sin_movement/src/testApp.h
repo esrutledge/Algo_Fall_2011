@@ -1,9 +1,8 @@
-#ifndef _TEST_APP
-#define _TEST_APP
-
-#define NUMSHAPES 300
+#pragma once
 
 #include "ofMain.h"
+#include "rectangle.h"
+
 
 class testApp : public ofBaseApp{
 
@@ -19,27 +18,10 @@ class testApp : public ofBaseApp{
 		void mousePressed(int x, int y, int button);
 		void mouseReleased(int x, int y, int button);
 		void windowResized(int w, int h);
-
-
-	int shapeWidth;
+		void dragEvent(ofDragInfo dragInfo);
+		void gotMessage(ofMessage msg);
 	
-	int rMax;
-	int gMax;
-	int bMax;
-	int aMax;
 	
-	int r;
-	int g;
-	int b;
-	int a;
-	
-	float startRadius;
-	float maxRadius;
-	
-	float radiusIncrement;
-	float incMax;
-	float incMin;
-	
+	rectangle myRect;
+		
 };
-
-#endif

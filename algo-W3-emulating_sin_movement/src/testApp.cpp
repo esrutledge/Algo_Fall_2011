@@ -2,72 +2,31 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
+	ofSetVerticalSync(TRUE);
+	ofSetFrameRate(60);
 	
-	ofSetVerticalSync(true);
+	ofBackground(100, 0, 255);
 	
-	ofBackground(0,0,0);
+	ofSetRectMode(OF_RECTMODE_CENTER);
 	
-	ofSetCircleResolution(100);
-	
-	shapeWidth = 1;
-	
-	maxRadius = 4;
-	
-	incMax = 2.4;
-	incMin = 1;
-	
-	rMax = 255;
-	gMax = 60;
-	bMax = 180;
-	aMax = 120;
-	
-	r=rMax;
-	g=gMax;
-	b=bMax;
-	a=aMax;
-
+	ofSetColor(255, 120, 0);
+		
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-	
-	
-	
-
+	if(myRect.startAnimation){
+		myRect.update();
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	
-	float xorig = ofGetWidth()/2;
-	float yorig = ofGetHeight()/2;
-	
-	startRadius = ofMap(sin(ofGetElapsedTimef()/10), -1, 1, 0, 1)*maxRadius;
-	//startRadius = 50;
-	radiusIncrement	= ofMap(sin(ofGetElapsedTimef()), -1, 1, incMin/incMax, 1)*incMax;
+	myRect.drawContainer();
 
-	
-	for (int i = 0; i < NUMSHAPES; i++){
-	
-		float radius = startRadius + i*radiusIncrement;
-		float angle = ofGetElapsedTimef() * (1 + i / 20.0);
-		r = ofMap(sin(ofGetElapsedTimef()*1), -1, 1, 0, 1)*rMax;
-		g = ofMap(sin(ofGetElapsedTimef()*1.5), -1, 1, 0, 1)*gMax;
-		b = ofMap(sin(ofGetElapsedTimef()*2), -1, 1, 0, 1)*bMax;
-
-		
-		float x = xorig + radius * cos(angle);
-		float y = yorig + radius * -sin(angle);
-		
-		
-		ofSetColor(r, g, b, a);
-		ofCircle(x,y,shapeWidth + i/2,shapeWidth + i/8);
-	
-	}	
-		
-	
-	
-
+	if(myRect.startAnimation){
+		myRect.draw();
+	}
 }
 
 //--------------------------------------------------------------
@@ -77,7 +36,15 @@ void testApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-
+	myRect.startAnimation = true;
+	myRect.pos.x = 0;
+	myRect.pos.y = 0;
+	myRect.spinVel = 3;
+	myRect.dropVel = 20;
+	myRect.timeStarted = ofGetElapsedTimef();
+	myRect.containerRadius = 400;
+	myRect.pathRadius = myRect.containerRadius;
+	myRect.timeMultiplier = 10;
 }
 
 //--------------------------------------------------------------
@@ -97,7 +64,6 @@ void testApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
-
 }
 
 //--------------------------------------------------------------
@@ -105,3 +71,12 @@ void testApp::windowResized(int w, int h){
 
 }
 
+//--------------------------------------------------------------
+void testApp::gotMessage(ofMessage msg){
+
+}
+
+//--------------------------------------------------------------
+void testApp::dragEvent(ofDragInfo dragInfo){ 
+
+}

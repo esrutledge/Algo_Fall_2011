@@ -9,7 +9,7 @@ void testApp::setup(){
 	
 	ofSetRectMode(OF_RECTMODE_CENTER);
 	
-	ofSetColor(255, 120, 0);
+	x(255, 120, 0);
 	
 }
 

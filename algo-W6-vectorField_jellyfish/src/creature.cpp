@@ -34,31 +34,12 @@ creature::creature(){
 	
 	tentacleLength = 300;
 	
-		
-	//set current points to the default to start off
-	//topHandle = topHandleDefault;
-//	midHandle = midHandleDefault;
-//	lowerBoundary = lowerBoundaryDefault;
-//	lowHandle = lowHandleDefault;
-	
+
 	justX.set(1,0);
 	justY.set(0,1);
 	bothXandY.set(1,1);
 	
-	
-	//vertices[0][0].set(0 + topHandle.x, 0 + topHandle.y);
-//	vertices[0][1].set(lowerBoundary.x + midHandle.x, lowerBoundary.y + midHandle.y);
-//	vertices[0][2].set(lowerBoundary.x, lowerBoundary.y);
-//	
-//	vertices[1][0].set(lowerBoundary.x + lowHandle.x, lowerBoundary.y + lowHandle.y);
-//	vertices[1][1].set(-1*(lowerBoundary.x + lowHandle.x), lowerBoundary.y + lowHandle.y);
-//	vertices[1][2].set(-1*lowerBoundary.x, lowerBoundary.y);
-//	
-//	vertices[2][0].set(-1*(lowerBoundary.x + midHandle.x), lowerBoundary.y + midHandle.y);
-//	vertices[2][1].set(-1*(0 + topHandle.x), 0 + topHandle.y);
-//	vertices[2][2].set(0,0);	
-	
-	
+    
 	
 }
 

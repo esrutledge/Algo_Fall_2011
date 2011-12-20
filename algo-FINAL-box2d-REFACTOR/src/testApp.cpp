@@ -11,12 +11,9 @@ void testApp::setup() {
     
     // load NYTimes data
     dataString = fileLoader.loadFromUrl("http://localhost/algo/algo-NYTimes_API_data.php");
- //   cout << dataString;
-    
+
     result = ofSplitString(dataString, "!");
 
-    
-    
     for(int i = 0; i< result.size(); i++){
         if(tempResult.size() > 0){
             tempResult.clear();
@@ -33,7 +30,7 @@ void testApp::setup() {
     
 
     
-	numEmailsStart = 20;
+	numEmailsStart = 80;
     numCategories = 20;
 
     radius = 12;
@@ -181,7 +178,7 @@ void testApp::resetAttractionPoints(int numCategories) {
             }
         }
         // if more than 5 categories, make use of center of screen
-        else if(numCategories<10){
+        else if(numCategories<9){
             if(i > 0){
                 tempPoint.x = ofGetWidth()/2 + defaultRingRadius*cos(i*PI*2/(numCategories-1))+xShift;
                 tempPoint.y = ofGetHeight()/2 + defaultRingRadius*sin(i*PI*2/(numCategories-1))-yShift;
@@ -192,14 +189,26 @@ void testApp::resetAttractionPoints(int numCategories) {
             }
             centerPoints.push_back(tempPoint);
         }
-        else {
+        else if(numCategories<14){
             if(i > 2){
-                tempPoint.x = ofGetWidth()/2 + outerRingRadius*cos(i*PI*2/(numCategories-3))+xShift;
-                tempPoint.y = ofGetHeight()/2 + outerRingRadius*sin(i*PI*2/(numCategories-3))-yShift;
+                tempPoint.x = ofGetWidth()/2 + defaultRingRadius*cos(i*PI*2/(numCategories-3))+xShift;
+                tempPoint.y = ofGetHeight()/2 + defaultRingRadius*sin(i*PI*2/(numCategories-3))-yShift;
             }
             else {
                 tempPoint.x = ofGetWidth()/2 + innerRingRadius*cos(i*PI*2/(3))+xShift;
                 tempPoint.y = ofGetHeight()/2 + innerRingRadius*sin(i*PI*2/(3))-yShift;
+            }
+            centerPoints.push_back(tempPoint);
+        }
+
+        else {
+            if(i > 4){
+                tempPoint.x = ofGetWidth()/2 + outerRingRadius*cos(i*PI*2/(numCategories-5))+xShift;
+                tempPoint.y = ofGetHeight()/2 + outerRingRadius*sin(i*PI*2/(numCategories-5))-yShift;
+            }
+            else {
+                tempPoint.x = ofGetWidth()/2 + innerRingRadius*1.2*cos(i*PI*2/(5))+xShift;
+                tempPoint.y = ofGetHeight()/2 + innerRingRadius*1.2*sin(i*PI*2/(5))-yShift;
             }
             centerPoints.push_back(tempPoint);
         }

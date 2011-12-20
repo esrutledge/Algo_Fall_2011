@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 42;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B056FBBC1497F11700EFD549 /* circleParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B056FBB91497F11700EFD549 /* circleParticle.cpp */; };
-		B056FBBD1497F11700EFD549 /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B056FBBB1497F11700EFD549 /* particle.cpp */; };
-		B056FBC51497FAF200EFD549 /* email.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B056FBC41497FAF200EFD549 /* email.cpp */; };
+		B02FB1FF149F45A100F338F1 /* paletteColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02FB1FE149F45A100F338F1 /* paletteColor.cpp */; };
+		B02FB21714A07D9800F338F1 /* ofxFileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02FB21514A07D9800F338F1 /* ofxFileLoader.cpp */; };
+		B0FD2104149840A000A4E732 /* email.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0FD2103149840A000A4E732 /* email.cpp */; };
 		BAA7352C13D71A7E00FB9E37 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAA734C913D71A7E00FB9E37 /* b2BroadPhase.cpp */; };
 		BAA7352D13D71A7E00FB9E37 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAA734CB13D71A7E00FB9E37 /* b2CollideCircle.cpp */; };
 		BAA7352E13D71A7E00FB9E37 /* b2CollidePolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAA734CC13D71A7E00FB9E37 /* b2CollidePolygon.cpp */; };
@@ -102,12 +102,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B056FBB81497F11700EFD549 /* circleParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleParticle.h; sourceTree = "<group>"; };
-		B056FBB91497F11700EFD549 /* circleParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = circleParticle.cpp; sourceTree = "<group>"; };
-		B056FBBA1497F11700EFD549 /* particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = particle.h; sourceTree = "<group>"; };
-		B056FBBB1497F11700EFD549 /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = particle.cpp; sourceTree = "<group>"; };
-		B056FBC31497FAE700EFD549 /* email.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = email.h; sourceTree = "<group>"; };
-		B056FBC41497FAF200EFD549 /* email.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = email.cpp; path = ../email.cpp; sourceTree = "<group>"; };
+		B02FB1FD149F459500F338F1 /* paletteColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paletteColor.h; sourceTree = "<group>"; };
+		B02FB1FE149F45A100F338F1 /* paletteColor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paletteColor.cpp; sourceTree = "<group>"; };
+		B02FB21514A07D9800F338F1 /* ofxFileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFileLoader.cpp; sourceTree = "<group>"; };
+		B02FB21614A07D9800F338F1 /* ofxFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFileLoader.h; sourceTree = "<group>"; };
+		B0FD2103149840A000A4E732 /* email.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = email.cpp; sourceTree = "<group>"; };
+		B0FD2105149840AC00A4E732 /* email.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = email.h; sourceTree = "<group>"; };
 		BAA734C413D71A7E00FB9E37 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		BAA734C713D71A7E00FB9E37 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		BAA734C913D71A7E00FB9E37 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2dDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2dDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* algo-FINAL-refactorDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "algo-FINAL-refactorDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = testApp.cpp; path = src/testApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
@@ -250,6 +250,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B02FB21414A07D9800F338F1 /* ofxFileLoader */ = {
+			isa = PBXGroup;
+			children = (
+				B02FB21514A07D9800F338F1 /* ofxFileLoader.cpp */,
+				B02FB21614A07D9800F338F1 /* ofxFileLoader.h */,
+			);
+			path = ofxFileLoader;
+			sourceTree = "<group>";
+		};
 		BAA734C313D71A7E00FB9E37 /* ofxBox2d */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +444,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				B02FB21414A07D9800F338F1 /* ofxFileLoader */,
 				BAA734C313D71A7E00FB9E37 /* ofxBox2d */,
 			);
 			name = addons;
@@ -491,22 +501,20 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
-				E4B69B5B0A3A1756003C02F2 /* algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2dDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* algo-FINAL-refactorDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
-				B056FBBA1497F11700EFD549 /* particle.h */,
-				B056FBBB1497F11700EFD549 /* particle.cpp */,
-				B056FBB81497F11700EFD549 /* circleParticle.h */,
-				B056FBB91497F11700EFD549 /* circleParticle.cpp */,
-				B056FBC31497FAE700EFD549 /* email.h */,
-				B056FBC41497FAF200EFD549 /* email.cpp */,
+				B0FD2105149840AC00A4E732 /* email.h */,
+				B0FD2103149840A000A4E732 /* email.cpp */,
+				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				B02FB1FD149F459500F338F1 /* paletteColor.h */,
+				B02FB1FE149F45A100F338F1 /* paletteColor.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -525,9 +533,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2d */ = {
+		E4B69B5A0A3A1756003C02F2 /* algo-FINAL-refactor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2d" */;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "algo-FINAL-refactor" */;
 			buildPhases = (
 				E4B69B580A3A1756003C02F2 /* Sources */,
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
@@ -539,9 +547,9 @@
 			dependencies = (
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
-			name = "algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2d";
+			name = "algo-FINAL-refactor";
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2dDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* algo-FINAL-refactorDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -549,11 +557,8 @@
 /* Begin PBXProject section */
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0420;
-			};
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2d" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "algo-FINAL-refactor" */;
+			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -573,7 +578,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2d */,
+				E4B69B5A0A3A1756003C02F2 /* algo-FINAL-refactor */,
 			);
 		};
 /* End PBXProject section */
@@ -653,9 +658,9 @@
 				BAA7355313D71A7E00FB9E37 /* ofxBox2dJoint.cpp in Sources */,
 				BAA7355413D71A7E00FB9E37 /* ofxBox2dPolygon.cpp in Sources */,
 				BAA7355513D71A7E00FB9E37 /* ofxBox2dRect.cpp in Sources */,
-				B056FBBC1497F11700EFD549 /* circleParticle.cpp in Sources */,
-				B056FBBD1497F11700EFD549 /* particle.cpp in Sources */,
-				B056FBC51497FAF200EFD549 /* email.cpp in Sources */,
+				B0FD2104149840A000A4E732 /* email.cpp in Sources */,
+				B02FB1FF149F45A100F338F1 /* paletteColor.cpp in Sources */,
+				B02FB21714A07D9800F338F1 /* ofxFileLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +741,7 @@
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -822,7 +828,8 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/osx\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/vs2010\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/win_cb\"";
-				PRODUCT_NAME = "algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2dDebug";
+				PREBINDING = NO;
+				PRODUCT_NAME = "algo-FINAL-refactorDebug";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -836,6 +843,7 @@
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -922,7 +930,8 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/osx\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/vs2010\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/win_cb\"";
-				PRODUCT_NAME = "algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2d";
+				PREBINDING = NO;
+				PRODUCT_NAME = "algo-FINAL-refactor";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -930,7 +939,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2d" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "algo-FINAL-refactor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
@@ -939,7 +948,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "algo-FINAL-gmail_particles-EXTRA_FORCES_WITH_BOX2d" */ = {
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "algo-FINAL-refactor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B600A3A1757003C02F2 /* Debug */,

@@ -8,6 +8,8 @@ void testApp::setup() {
 	ofSetLogLevel(OF_LOG_NOTICE);
     
     loadColors();
+    sortByCategory = false;
+    myFont.loadFont("GothamHTF-Bold.otf", 32, true, true, true);
     
     // load NYTimes data
     dataString = fileLoader.loadFromUrl("http://localhost/algo/algo-dummy_data.txt");
@@ -31,11 +33,12 @@ void testApp::setup() {
 
     
 	numEmailsStart = 80;
+    numCategoriesStart = 20;
     numCategories = 20;
-
-    radius = 12;
     
-    unitRadius = 80;
+    radius = 18;
+    
+    unitRadius = 120;
 
     xShift = 70;
     yShift = 10;
@@ -46,24 +49,55 @@ void testApp::setup() {
 	box2d.init();
 	box2d.setFPS(30.0);
     box2d.registerGrabbing();
-    box2d.setGravity(-8,8);
+    box2d.setGravity(0,0);
     box2d.createBounds(0,0,ofGetWidth()+1000,ofGetHeight());
 		
 
     
-    for(int i=0; i<numCategories; i++) {
-        resetAttractionPoints(numCategories);
+    for(int i=0; i<numCategoriesStart; i++) {
+   //     resetAttractionPoints(numCategories);
+        catHasArticles[i] = false;
     }
    
     // add email/circles to world
 	for (int i=0; i < numEmailsStart; i++) {
-        addEmail(i % numCategories);
+       if(nestedResults[i].size() > 0) {    
+            if(indexForCategory(nestedResults[i][CATEGORY]) > -1){
+              //  addEmail(i%numCategories);
+                addEmail(indexForCategory(nestedResults[i][CATEGORY]), i);
+                
+                // keeping track of which articles actually have articles in them
+                catHasArticles[indexForCategory(nestedResults[i][CATEGORY])] = true;
+            }
+        }
+    }
+    
+    for (int i=0; i<emails.size(); i++) {
         emails[i].setInitialConditions();
     }
     
+    //now keep track of reverse (what index is for current category)
+    for(int i=0; i<numCategoriesStart; i++) {
+        if(catHasArticles[i] == true){
+            categoriesWithArticles.push_back(i);
+            currentCategoryKeys[i] = categoriesWithArticles.size() -1;
+        }
+        else {
+            currentCategoryKeys[i] = -1;
+        }
+    }
+    
+    
+    for(int i=0; i<numCategoriesStart; i++) {
+        cout << currentCategoryKeys[i] << "\n";
+    }
 
+    numCategories = categoriesWithArticles.size();
     
-    
+    for (int i = 0; i < numCategories ; i++) {
+         resetAttractionPoints(numCategories);
+    }
+    ;
 }
 
 
@@ -90,6 +124,7 @@ void testApp::update() {
 
     // update emails
     for(int i=0; i < emails.size(); i++){
+        emails[i].checkHovering(mouseX, mouseY);
         emails[i].update();
     }
     
@@ -97,11 +132,15 @@ void testApp::update() {
     oldNumCategories = numCategories;
 
     countReleased();
+    
+
 }
 
 
 //--------------------------------------------------------------
 void testApp::draw() {
+    myFont.drawString("hi", 100, 100);
+
     
     ofFill();
 
@@ -113,6 +152,12 @@ void testApp::draw() {
     
     for(int i=0; i < emails.size(); i++){
         emails[i].drawMePlease();
+    }
+
+    for(int i=0; i < emails.size(); i++){
+        if(emails[i].isHovering) {
+            emails[i].hoverTitle(myFont);
+        }
     }
     
 	// draw the ground
@@ -135,7 +180,7 @@ void testApp::draw() {
 
 //--------------------------------------------------------------
 
-void testApp::addEmail(int _whichCategory){    
+void testApp::addEmail(int _whichCategory, int index){    
     
     float r = ofRandom(30, 50);		
     float rx = ofRandom(55, ofGetWidth()-55);		        
@@ -149,13 +194,30 @@ void testApp::addEmail(int _whichCategory){
     circle.r = ofRandom(200,255);
     circle.g = ofRandom(100,200);
     circle.b = 0;
-    circle.whichCategory = _whichCategory;
-    circle.attractionPoint = centerPoints[_whichCategory];
     
+    circle.whichCategory = _whichCategory;
+    
+    circle.catName = nestedResults[index][CATEGORY];
+    circle.title = nestedResults[index][TITLE];
+    circle.abstract = nestedResults[index][ABSTRACT];
+    circle.url = nestedResults[index][URL];
+    circle.byline = nestedResults[index][BYLINE];
+    circle.hasImg = nestedResults[index][HAS_IMG];
+    circle.imgURL = nestedResults[index][IMG_URL];
+
     emails.push_back(circle);
    
 
 }
+
+//--------------------------------------------------------------
+
+
+void testApp::assignDetailsInfo(int _i){
+    
+
+}
+
 
 //--------------------------------------------------------------
 
@@ -224,9 +286,11 @@ void testApp::applyNewAttractionPoints(int numCategories) {
     
     for(int i=0; i<emails.size(); i++){
         emails[i].isSettled = false;
-        emails[i].whichCategory = i % numCategories;
-        emails[i].attractionPoint = centerPoints[emails[i].whichCategory];
-        
+ //       emails[i].whichCategory = i % numCategories;
+        emails[i].attractionPoint = centerPoints[currentCategoryKeys[emails[i].whichCategory]];
+//        emails[i].attractionPoint.x = 400;
+//        emails[i].attractionPoint.y = 400;
+//        
         emails[i].r = paletteColors[emails[i].whichCategory].r;
         emails[i].g = paletteColors[emails[i].whichCategory].g;
         emails[i].b = paletteColors[emails[i].whichCategory].b;

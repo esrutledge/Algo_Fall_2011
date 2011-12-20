@@ -24,6 +24,7 @@ void email::setInitialConditions() {
     isTrash = false;
     isSaved = false;
     isSettled = false;
+    timeStamp = ofGetElapsedTimef();
     
     
 }
@@ -51,7 +52,7 @@ void email::update() {
     }
     setDamping(0.8f);
     
-    if(ofGetElapsedTimef() - timeStamp > 1 ) {
+    if(ofGetElapsedTimef() - timeStamp > 1 && ofGetElapsedTimef() > 5) {
 //    if(ofGetElapsedTimef() - timeStamp > 1 && ofDist(getPosition().x, getPosition().y, attractionPoint.x, attractionPoint.y) < 50 && getVelocity().x < 0.01 && getVelocity().y < .01) {
         isSettled = true;
     }

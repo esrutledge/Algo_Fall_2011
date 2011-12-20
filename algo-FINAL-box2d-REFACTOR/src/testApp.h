@@ -6,6 +6,18 @@
 #include "ofxBox2d.h"
 #include "email.h"
 #include "paletteColor.h"
+#include "ofxFileLoader.h"
+
+
+// set up constants to use instead of numeric keys for stringData
+
+#define CATEGORY 0
+#define TITLE 1
+#define ABSTRACT 2
+#define URL 3
+#define BYLINE 4
+#define HAS_IMG 5
+#define IMG_URL 6
 
 // -------------------------------------------------
 
@@ -52,30 +64,33 @@ public:
     int trash;
 	
 	ofxBox2d						box2d;			  //	the box2d world
-//	vector		<ofxBox2dCircle>	circles;		  //	default box2d circles
-//	vector		<ofxBox2dRect>		boxes;			  //	defalut box2d rects
-//	
+
     vector <ofVec2f> centerPoints;
-//    vector <ofVec2f> catDiffs;    
-//    vector <bool> isTrash;
-//    vector <bool> isSaved;
-//    vector <bool> isSettled;
-//    
-//    vector <int> whichCategory;
-//    
-//    struct emailUserData {
-//        int category;
-//        string sender;      
-//        string subject;              
-//    };
-//	
+
     int numEmailsStart;
     int numCategories;
     int oldNumCategories;
-//    
+    
     ofVec2f tempPoint;
     bool tempBool;
     int tempInt;
+    
+
+    
+    // loading data utilities
+    ofxFileLoader fileLoader;
+    string dataString;
+    
+    vector <string> result;
+    vector <string> tempResult;
+    vector < vector <string> > nestedResults;
+    
+    
+    // create arrays to deal with keys/indices for categories
+    int indexForCategory(string _catString);
+    
+    
+    
     
 };
 

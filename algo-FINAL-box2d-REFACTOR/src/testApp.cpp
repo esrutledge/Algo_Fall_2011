@@ -9,12 +9,34 @@ void testApp::setup() {
     
     loadColors();
     
-    ofSetCircleResolution(200);
+    // load NYTimes data
+    dataString = fileLoader.loadFromUrl("http://localhost/algo/algo-NYTimes_API_data.php");
+ //   cout << dataString;
+    
+    result = ofSplitString(dataString, "!");
+
+    
+    
+    for(int i = 0; i< result.size(); i++){
+        if(tempResult.size() > 0){
+            tempResult.clear();
+        }
+        tempResult = ofSplitString(result[i], "#");
+        nestedResults.push_back(tempResult);
+    }
+    
+
+//    for(int i=0; i< nestedResults[0].size(); i++){
+//        cout << nestedResults[0][i] << "###\n";        
+//    }
+
+    
+
     
 	numEmailsStart = 20;
-    numCategories = 5;
+    numCategories = 20;
 
-    radius = 24;
+    radius = 12;
     
     unitRadius = 80;
 
@@ -41,6 +63,10 @@ void testApp::setup() {
         addEmail(i % numCategories);
         emails[i].setInitialConditions();
     }
+    
+
+    
+    
 }
 
 
@@ -49,7 +75,7 @@ void testApp::setup() {
 
 void testApp::update() {
 
-    cout << emails[0].isSettled << "\n";
+//    cout << emails[0].isSettled << "\n";
 
     innerRingRadius = unitRadius;
     defaultRingRadius = 2.5 * unitRadius;
@@ -310,6 +336,77 @@ void testApp::loadColors() {
     paletteColors[19].set(240, 64, 41);
 
 }
+
+
+//--------------------------------------------------------------
+
+int testApp::indexForCategory(string catString) {
+    if(catString == "Sports") {
+        return 0;
+    }
+    else if(catString == "World") {
+        return 1;        
+    }
+    else if(catString == "Business Day") {
+        return 2;        
+    }
+    else if(catString == "U.S.") {
+        return 3;        
+    }
+    else if(catString == "Education") {
+        return 4;        
+    }
+    else if(catString == "Health") {
+        return 5;        
+    }
+    else if(catString == "Technology") {
+        return 6;        
+    }
+    else if(catString == "Theater") {
+        return 7;        
+    }
+    else if(catString == "N.Y. / Region") {
+        return 8;        
+    }
+    else if(catString == "Opinion") {
+        return 9;        
+    }
+    else if(catString == "Business") {
+        return 10;        
+    }
+    else if(catString == "Movies") {
+        return 11;        
+    }
+    else if(catString == "Magazine") {
+        return 12;        
+    }
+    else if(catString == "Fashion & Style") {
+        return 13;        
+    }
+    else if(catString == "Books") {
+        return 14;        
+    }
+    else if(catString == "Arts") {
+        return 15;        
+    }
+    else if(catString == "Real Estate") {
+        return 16;        
+    }
+    else if(catString == "Science") {
+        return 17;        
+    }
+    else if(catString == "T:Style") {
+        return 18;        
+    }
+    else if(catString == "Corrections") {
+         return 19;       
+    }
+    else {
+        return -1;
+    }
+
+}
+
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key) {

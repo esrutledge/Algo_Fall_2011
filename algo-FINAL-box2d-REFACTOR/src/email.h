@@ -36,6 +36,8 @@ public:
     bool isSettled;
     
     float timeStamp;
+    
+    vector <string> detailsInfo;
 };
 
 

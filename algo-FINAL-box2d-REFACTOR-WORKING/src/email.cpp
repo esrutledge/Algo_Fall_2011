@@ -69,13 +69,13 @@ void email::update() {
     }
     
     if(isSettled){
-        attractionForce = 0.5;
+        attractionForce = 2;
 
         if(getPosition().x > attractionPoint.x + 200){
             isTrash = true;
         }
 //        else if(getPosition().x < 100 && ofGetElapsedTimef() > 1){
-        else if(getPosition().x < attractionPoint.x - 160){
+        else if(getPosition().x < attractionPoint.x - 200){
             isSaved = true;
         }
     }
@@ -104,9 +104,15 @@ void email::hoverTitle(ofTrueTypeFont font, ofTrueTypeFont smallerFont) {
   //      cout << title << "\n";
     
     string info = "";
-	info += catName + title+"\n";
+	info += title+"\n";
+//	info += "Total Saved: "+ ofToString(saved) +"\n\n";
+//	info += "Total Trashed: "+ ofToString(trash) + "\n";
+//	info += "Number of categories: "+ofToString(numCategories)+"\n";
+//	ofDrawBitmapString(info, getPosition().x, getPosition().y);
     
     infoWidth = font.stringWidth(info);
+    
+   
     
     ofSetColor(0,0,0);
     ofRect(getPosition().x - infoWidth/2 -10, 

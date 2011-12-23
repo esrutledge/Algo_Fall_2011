@@ -34,8 +34,7 @@ void testApp::setup() {
     
     // load NYTimes data
     dataString = fileLoader.loadFromUrl("http://localhost/algo/algo-dummy_data.txt");
-    //dataString = fileLoader.loadFromUrl("http://localhost/algo/algo-NYTimes_API_data.php");
-    
+
     result = ofSplitString(dataString, "!");
 
     for(int i = 0; i< result.size(); i++){

@@ -512,9 +512,9 @@
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				B0FD2105149840AC00A4E732 /* email.h */,
 				B0FD2103149840A000A4E732 /* email.cpp */,
-				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				B02FB1FD149F459500F338F1 /* paletteColor.h */,
 				B02FB1FE149F45A100F338F1 /* paletteColor.cpp */,
+				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
